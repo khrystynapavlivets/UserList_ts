@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(244, 245, 247);
+            font-size: 20px;
+            font-weight: 300;
+            color: rgb(27, 27, 27);
+        }
+
+        .container {
+            width: 85%;
+            margin: 50px auto;
+            display: flex;
+        }
+
+        .user-add {
+            width: 50%;
+        }
+
+        /*create input */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            height: 45px;
+            margin: 8px 0 20px 0;
+            padding: 0 20px;
+            font-size: 16px;
+            outline: none;
+            border: 1px solid rgb(180, 180, 180);
+            border-radius: 7px;
+
+        }
+
+        input::placeholder {
+            font-size: 16px;
+        }
+
+        .focus {
+            border: 3px solid #3378d7e9;
+            box-shadow: 0px 0px 5px 1px #3378d7e9;
+        }
+
+        .error {
+            border: 3px solid rgb(240, 35, 35);
+            box-shadow: 0px 0px 5px 1px rgb(240, 35, 35);
+        }
+
+        /* create button*/
+        .user-add-btn,
+        .user-edit-btn {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid rgb(11, 131, 11);
+            border-radius: 5px;
+            color: rgb(11, 131, 11);
+            font-size: 18px;
+            transition: 0.3s all;
+        }
+
+        .user-add-btn:hover,
+        .user-edit-btn:hover {
+            cursor: pointer;
+            background-color: rgb(11, 131, 11);
+            color: white;
+        }
+
+        .active {
+            box-shadow: 0px 1px 3px 4px rgb(11 131 11);
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .edit-btn {
+            background-color: rgb(255, 208, 0);
+            border: 1px solid rgb(226, 186, 6);
+            color: rgb(8, 8, 8);
+        }
+
+        .edit-btn:hover {
+            background-color: rgb(243, 182, 13);
+        }
+
+        .delete-btn {
+            background-color: rgb(252, 19, 19);
+            border: 1px solid rgb(221, 19, 19);
+            color: rgb(255, 255, 255);
+        }
+
+        .delete-btn:hover {
+            background-color: rgb(216, 25, 25);
+        }
+
+        /* create table*/
+        table,
+        tr,
+        th {
+            margin: 20px 0 0 30px;
+            border-top: 1px solid rgb(180, 180, 180);
+            border-bottom: 1px solid rgb(180, 180, 180);
+            border-collapse: collapse;
+            padding: 20px;
+        }
+
+        td {
+            font-size: 18px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="user-add" name="user">
+            <p>Login</p>
+            <input type="text" class="user-login" autocomplete='user-name' placeholder="Enter login">
+            <p>Password</p>
+            <input type="password" class="user-password" autocomplete='current-password' placeholder="Enter password">
+            <p>Email address</p>
+            <input type="text" class="user-email" placeholder="Enter email">
+            <input type="button" class="user-add-btn" value="Add user" disabled>
+            <input type="button" class="user-edit-btn" value="Edit user" disabled hidden>
+        </form>
+        <div class="user-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Login</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>Edit</th>
+                        <th>Delite</th>
+                    </tr>
+                </thead>
+                <tbody class="user-list"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
